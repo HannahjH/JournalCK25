@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Iv9-El-7P6">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Journal-->
+        <scene sceneID="HsS-zp-xOi">
+            <objects>
+                <tableViewController id="jSF-Qd-6al" customClass="EntryListTableViewController" customModule="JournalCK25" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VAJ-JD-CcR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" textLabel="f7w-z7-ji0" detailTextLabel="ypd-L5-ZC2" style="IBUITableViewCellStyleSubtitle" id="wwf-K2-4OL">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwf-K2-4OL" id="J8K-B4-XoX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f7w-z7-ji0">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ypd-L5-ZC2">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="9aN-kE-u9M" kind="show" identifier="toEditEntry" id="WIJ-V2-3Nx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jSF-Qd-6al" id="Cwn-6L-hG6"/>
+                            <outlet property="delegate" destination="jSF-Qd-6al" id="nha-1m-FqX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Journal" id="Cbv-5T-HAX">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="oIa-3O-3zO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="9aN-kE-u9M" kind="show" identifier="toEntryVC" id="dne-2h-sQe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lZK-E6-yCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="154"/>
+        </scene>
+        <!--Entry-->
+        <scene sceneID="aDF-jK-vZ1">
+            <objects>
+                <viewController id="9aN-kE-u9M" customClass="EntryDetailViewController" customModule="JournalCK25" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xq9-P0-VfL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-vf-aMW">
+                                <rect key="frame" x="8" y="96" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9aN-kE-u9M" id="YqW-g3-DJE"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H6F-pM-euf">
+                                <rect key="frame" x="8" y="136" width="398" height="678"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsC-Hb-jLH">
+                                <rect key="frame" x="8" y="824" width="398" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="9aN-kE-u9M" eventType="touchUpInside" id="mXZ-SC-Jdg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="EsC-Hb-jLH" firstAttribute="leading" secondItem="cz7-7d-i88" secondAttribute="leading" constant="8" id="07t-Ow-s05"/>
+                            <constraint firstItem="cz7-7d-i88" firstAttribute="trailing" secondItem="EsC-Hb-jLH" secondAttribute="trailing" constant="8" id="0QY-zi-sCG"/>
+                            <constraint firstItem="EsC-Hb-jLH" firstAttribute="top" secondItem="H6F-pM-euf" secondAttribute="bottom" constant="10" id="2xZ-g0-Y2X"/>
+                            <constraint firstItem="CgH-vf-aMW" firstAttribute="top" secondItem="cz7-7d-i88" secondAttribute="top" constant="8" id="BCM-Km-VC7"/>
+                            <constraint firstItem="cz7-7d-i88" firstAttribute="bottom" secondItem="EsC-Hb-jLH" secondAttribute="bottom" constant="8" id="JX1-XJ-bdN"/>
+                            <constraint firstItem="cz7-7d-i88" firstAttribute="trailing" secondItem="H6F-pM-euf" secondAttribute="trailing" constant="8" id="d1g-9W-tKN"/>
+                            <constraint firstItem="cz7-7d-i88" firstAttribute="trailing" secondItem="CgH-vf-aMW" secondAttribute="trailing" constant="8" id="kqt-FH-cnS"/>
+                            <constraint firstItem="H6F-pM-euf" firstAttribute="leading" secondItem="cz7-7d-i88" secondAttribute="leading" constant="8" id="lcc-Ce-8q1"/>
+                            <constraint firstItem="CgH-vf-aMW" firstAttribute="leading" secondItem="cz7-7d-i88" secondAttribute="leading" constant="8" id="mAa-z2-GQv"/>
+                            <constraint firstItem="H6F-pM-euf" firstAttribute="top" secondItem="CgH-vf-aMW" secondAttribute="bottom" constant="10" id="mnM-23-7Rq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cz7-7d-i88"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dW6-pq-xx1" appends="YES" id="p4K-C0-Bmy"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Entry" id="wKV-jY-wxp">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="exZ-bM-rOF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="9aN-kE-u9M" id="DFm-Qg-SsB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="H6F-pM-euf" id="sAS-hk-7Ze"/>
+                        <outlet property="titleTextField" destination="CgH-vf-aMW" id="lFy-y4-PKk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4p-gc-830" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dW6-pq-xx1">
+                    <connections>
+                        <action selector="mainViewTapped:" destination="9aN-kE-u9M" id="k8N-x6-OYf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="923" y="155"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eRY-ur-uUp">
+            <objects>
+                <navigationController id="Iv9-El-7P6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SVl-7l-42x">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.02666970535" green="0.0" blue="0.29762886700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.02666970535" green="0.0" blue="0.29762886700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jSF-Qd-6al" kind="relationship" relationship="rootViewController" id="ZF7-QW-DTP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kou-RI-Gjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751" y="154"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dne-2h-sQe"/>
+    </inferredMetricsTieBreakers>
+</document>
